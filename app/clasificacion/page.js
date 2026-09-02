@@ -9,7 +9,7 @@ export default async function ClasificacionPage() {
   const clasificacion = data.clasificacion;
 
   return (
-    <div style={{ padding: "2rem", maxWidth: "900px", margin: "0 auto" }}>
+    <div style={{ padding: "2rem", maxWidth: "1100px", margin: "0 auto" }}>
       <h1 style={{ fontWeight: 500, marginBottom: "1rem" }}>Clasificación</h1>
 
       <table style={{ width: "100%", borderCollapse: "collapse", fontSize: "0.95rem" }}>
@@ -20,7 +20,10 @@ export default async function ClasificacionPage() {
             <th style={{ textAlign: "left", padding: "0.6rem" }}>Pts</th>
             <th style={{ textAlign: "left", padding: "0.6rem" }}>Jug</th>
             <th style={{ textAlign: "left", padding: "0.6rem" }}>V</th>
+            <th style={{ textAlign: "left", padding: "0.6rem" }}>E</th>
             <th style={{ textAlign: "left", padding: "0.6rem" }}>D</th>
+            <th style={{ textAlign: "left", padding: "0.6rem" }}>GF</th>
+            <th style={{ textAlign: "left", padding: "0.6rem" }}>GC</th>
           </tr>
         </thead>
 

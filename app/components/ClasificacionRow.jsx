@@ -7,18 +7,21 @@ function getRowStyle(posicion) {
 
 export default function ClasificacionRow({ equipo }) {
   const style = {
-    ...getRowStyle(equipo.posicion),
+    ...getRowStyle(equipo.position),
     borderBottom: "1px solid #eee"
   };
 
   return (
     <tr style={style}>
-      <td style={{ padding: "0.6rem" }}>{equipo.posicion}</td>
-      <td style={{ padding: "0.6rem" }}>{equipo.nombre}</td>
-      <td style={{ padding: "0.6rem" }}>{equipo.puntos}</td>
-      <td style={{ padding: "0.6rem" }}>{equipo.partidosJugados}</td>
-      <td style={{ padding: "0.6rem" }}>{equipo.victorias}</td>
-      <td style={{ padding: "0.6rem" }}>{equipo.derrotas}</td>
+      <td style={{ padding: "0.6rem" }}>{equipo.position}</td>
+      <td style={{ padding: "0.6rem" }}>{equipo.team_name}</td>
+      <td style={{ padding: "0.6rem" }}>{equipo.points}</td>
+      <td style={{ padding: "0.6rem" }}>{equipo.played}</td>
+      <td style={{ padding: "0.6rem" }}>{equipo.won}</td>
+      <td style={{ padding: "0.6rem" }}>{equipo.drawn}</td>
+      <td style={{ padding: "0.6rem" }}>{equipo.lost}</td>
+      <td style={{ padding: "0.6rem" }}>{equipo.goals_for}</td>
+      <td style={{ padding: "0.6rem" }}>{equipo.goals_against}</td>
     </tr>
   );
 }
