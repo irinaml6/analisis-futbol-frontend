@@ -6,29 +6,35 @@ export default async function ClasificacionPage() {
   });
 
   const data = await res.json();
-  const clasificacion = data.clasificacion;
+
+  const clasificacionOrdenada = [...data.clasificacion].sort(
+    (a, b) => a.position - b.position
+  );
 
   return (
-    <div style={{ padding: "2rem", maxWidth: "1100px", margin: "0 auto" }}>
-      <h1 style={{ fontWeight: 500, marginBottom: "1rem" }}>Clasificación</h1>
+    <div style={{ padding: "2rem", maxWidth: "1100px", margin: "0 auto", backgroundColor: "#121212", minHeight: "100vh" }}>
+      <h1 style={{ fontWeight: 500, marginBottom: "1rem", color: "white", fontFamily: "Arial" }}>
+        Clasificación
+      </h1>
 
       <table style={{ width: "100%", borderCollapse: "collapse", fontSize: "0.95rem" }}>
         <thead>
-          <tr style={{ borderBottom: "2px solid #ddd" }}>
-            <th style={{ textAlign: "left", padding: "0.6rem" }}>Pos</th>
-            <th style={{ textAlign: "left", padding: "0.6rem" }}>Equipo</th>
-            <th style={{ textAlign: "left", padding: "0.6rem" }}>Pts</th>
-            <th style={{ textAlign: "left", padding: "0.6rem" }}>Jug</th>
-            <th style={{ textAlign: "left", padding: "0.6rem" }}>V</th>
-            <th style={{ textAlign: "left", padding: "0.6rem" }}>E</th>
-            <th style={{ textAlign: "left", padding: "0.6rem" }}>D</th>
-            <th style={{ textAlign: "left", padding: "0.6rem" }}>GF</th>
-            <th style={{ textAlign: "left", padding: "0.6rem" }}>GC</th>
+          <tr style={{ borderBottom: "2px solid #333" }}>
+            <th style={{ padding: "0.6rem", color: "white", fontFamily: "Arial" }}></th>
+            <th style={{ textAlign: "left", padding: "0.6rem", color: "white", fontFamily: "Arial" }}>Equipo</th>
+            <th style={{ textAlign: "left", padding: "0.6rem", color: "white", fontFamily: "Arial" }}>Pos</th>
+            <th style={{ textAlign: "left", padding: "0.6rem", color: "white", fontFamily: "Arial" }}>Pts</th>
+            <th style={{ textAlign: "left", padding: "0.6rem", color: "white", fontFamily: "Arial" }}>Jug</th>
+            <th style={{ textAlign: "left", padding: "0.6rem", color: "white", fontFamily: "Arial" }}>V</th>
+            <th style={{ textAlign: "left", padding: "0.6rem", color: "white", fontFamily: "Arial" }}>E</th>
+            <th style={{ textAlign: "left", padding: "0.6rem", color: "white", fontFamily: "Arial" }}>D</th>
+            <th style={{ textAlign: "left", padding: "0.6rem", color: "white", fontFamily: "Arial" }}>GF</th>
+            <th style={{ textAlign: "left", padding: "0.6rem", color: "white", fontFamily: "Arial" }}>GC</th>
           </tr>
         </thead>
 
         <tbody>
-          {clasificacion.map((equipo, i) => (
+          {clasificacionOrdenada.map((equipo, i) => (
             <ClasificacionRow key={i} equipo={equipo} />
           ))}
         </tbody>
